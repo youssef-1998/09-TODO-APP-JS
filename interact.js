@@ -1,9 +1,10 @@
 const ztext = document.querySelector('input');
 const add = document.querySelector('button');
+let text = ''                                                // declaration de lement text vide
 
 ztext.addEventListener('change', function (e) {              // creation d'un event change (fin saiser sortir de zone de txt par click)sur ztext
-    let text = e.target.value;                               // get the value of the input a la elment text 
-
+    text = e.target.value;                                   // get the value of the input a la elment text 
+})
     add.addEventListener('click', function () {              // creation d'un event click sur btn add
 
         var btnComplete = document.createElement('button');  // creation d'un element (button)
@@ -25,8 +26,8 @@ ztext.addEventListener('change', function (e) {              // creation d'un ev
 
         var main = document.querySelector('main');           // declaration && sélectionner main
         main.appendChild(container);   //ajout les element{(container):btncomplete + btndelete + (toDo='h1')}a la element(main)
-        e.target.value = '';                                 // vide zone de text
 
+        document.querySelector('.zone-text').value = '';     // vide zone de text
 
 
         btnComplete.addEventListener("click", function () {  // creation d'un event click sur btnComplete
@@ -37,18 +38,11 @@ ztext.addEventListener('change', function (e) {              // creation d'un ev
             else if (btnComplete.innerHTML === "Undo") {     // condtoin si text de btnComplete = Undo 
                 btnComplete.innerHTML = "complete";          // remplace txte btnComplete [undo] par [complete]
                 toDo.style.textDecoration = 'none';          // not! hachere txte toDo
-
-
             }
         }) 
-        
         btnDelete.addEventListener('click', function () {    // creation d'un event click sur btnDelete
             btnComplete.remove();                            // supprimer btnComplete 
             btnDelete.remove();                              // supprimer btnDelete
             toDo.remove();                                   // supprimer toDo
         })
-
-
     })
-})
-

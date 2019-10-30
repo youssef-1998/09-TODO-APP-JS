@@ -70,6 +70,8 @@ hr{
 }
 main{
     padding-bottom: 45px;
+    margin-left: 50px;
+    width: 100%;
 }
 
 
@@ -88,9 +90,8 @@ main{
     font-size: 15px;
     transition: .3s;
     cursor: pointer;
- /* padding: 11px;
-    width: 90px;
-    padding-right: 80px;*/
+    margin-bottom: 5px;
+    width: 78px;
 }
 
 
